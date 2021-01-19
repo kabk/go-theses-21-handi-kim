@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Imbue&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
+    body {
+      /* font-family: 'Potta One', cursive; */
+      background-color: white;
+      margin: 0em;
+      max-width: 100rem;
+      height: 100%;
+    }
+
+    button {
+      transition: all .2s ease-in-out;
+    }
+
+    button:hover {
+      transform: scale(1.01);
+    }
+
+    /* .widget1{
+      width: 8rem;
+      height: 6rem;
+      max-width: 80rem;
+      background-color: transparent;
+      background-image:url(img/logo.svg);
+      background-size: contain;
+      position: fixed;
+      bottom: 0.8rem;
+      left: 1rem;
+      border-radius: 3.2rem;
+      z-index: 0;
+      display: inline-block;
+    }
+
+    .widget2{
+      width: 8rem;
+      height: 6rem;
+      max-width: 80rem;
+      background-color: transparent;
+      position: fixed;
+      bottom: 0.8rem;
+      left: 9.1rem;
+      border-radius: 3.2rem;
+      z-index: 0;
+      display: inline-block;
+      background-image:url(img/logo.svg);
+      background-size: contain;
+    } */
+
+    .widget3 {
+      /* margin-top: 10rem; */
+      width: 100%;
+      height: 12%;
+      max-width: 100rem;
+      background-color: white;
+      position: fixed;
+      bottom: -1rem;
+      left:0rem;
+      padding-top: 0.2rem;
+      border-radius: 0rem;
+      z-index: 0;
+      border-radius: 1.9rem;
+      border: 0;
+      box-shadow: 0 -5px 25px 20px rgba(0, 0, 0, 0.03), 0 -5px 10px 10px rgba(0, 0, 0, 0.01);
+
+    }
+
+    .widget3 p {
+      font-size: 3.5vw;
+      font-family: sans-serif;
+      text-align: center;
+
+    }
+
+    .widget4 {
+      /* margin-top: 10rem; */
+      width: 100%;
+      height: 5rem;
+      max-width: 100rem;
+      background-color: transparent;
+      position: relative;
+      display: hidden;
+      bottom: 0;
+      left:0rem;
+      padding-top: 0.2rem;
+      border-radius: 0rem;
+      z-index: 0;
+      border-radius: 1.9rem;
+      border: 0;
+
+    }
+
+    #myCLICK, #myCLOSE {
+      z-index: 10;
+      max-width: 100rem;
+      max-height: 100%;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      padding: 1em;
+      text-align: center;
+      background-color: white;
+      cursor: pointer;
+      outline: 0;
+      border-radius: 1.2rem;
+      border: 0;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      font-size: 2.5vw;
+    }
+
+    #myINBOX {
+      z-index: 10;
+      width: 100%;
+      max-width: 100rem;
+
+      padding: 0;
+      text-align: center;
+      background-color: white;
+      margin-top: 1rem;
+      display: none;
+      border-radius: 1.8rem;
+    }
+
+    wrapper {
+      position: relative;
+      transition: 0.4s;
+      -webkit-transition: 2s;
+      text-align: center;
+
+    }
+
+    /* .wrapper:hover, .wrapper.clicked{
+    margin-left:500px;
+    -webkit-transition:1s; // you don't need to specify this again
+ } */
+
+    ul {
+      list-style-type: none;
+      width: 100%;
+      max-width: 100rem;
+      height: 100%;
+      padding: 0rem;
+      margin:0 auto;
+      font-family: sans-serif;
+      font-size: 2em;
+    }
+
+    h1 {
+      margin-top: 3rem;
+      font-family: sans-serif;
+      font-size: 5.5vw;
+      color: black;
+      text-align: center;
+    }
+
+    h2 {
+      font-family: sans-serif;
+      font-style: oblique;
+      font-size: 3.5vw;
+      color: black;
+    }
+
+    /* p {
+      color: black;
+      font-size: 5vw;
+      font-family: sans-serif;
+    } */
+
+    /* button {
+  position: relative;
+  width: 100%;
+  max-width: 40rem;
+  height: 1.5rem;
+  display: block;
+  margin:0 auto;
+  padding: 2rem;
+  margin-top: 1.25rem;
+
+} */
+
+    button:nth-child(2n) {
+      background: white;
+    }
+
+    /* button:nth-child(2n+1) {
+      background: yellow;
+    } */
+
+    button.accordion {
+      background: white;
+      cursor: pointer;
+    }
+
+
+
+    .accordion {
+      z-index: 1000;
+      display: block;
+      color: black;
+      cursor: pointer;
+      width: 100%;
+      /* text-align: center; */
+      outline: none;
+      max-width: 100rem;
+      margin: 0rem auto;
+      margin-top: 0rem;
+      padding: 0.5rem;
+      border-radius: 1.2rem;
+      background-color: #fff;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      border: 0;
+    }
+
+    .active,
+    .accordion:hover {
+      background-color: #eee;
+    }
+
+    .panel {
+      width: 97%;
+      max-width: 100rem;
+      margin: 0rem auto;
+      margin-top: 0rem;
+      margin-left: -1rem auto;
+      padding: 0.5rem;
+      border-radius: 1.2rem;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+      outline: none;
+      text-align:left;
+      background-color: #fff;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      z-index:10;
+    }
+
+    .panel p {
+      font-size: 4vw;
+    }
+
+    .chat-notification {
+      /* background: url(img/girl.svg);
+  background-size: contain; */
+      display: block;
+      max-width: 100rem;
+      height: 100%;
+      width: 88%;
+      margin: 1rem auto;
+      margin-top: -3em;
+      padding: 1.2rem;
+      border-radius: 3.5rem;
+      background-color: white;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .chat-notification-logo-wrapper {
+      flex-shrink: 0;
+      height: 36rem;
+      width: 10rem;
+    }
+
+    /* .chat-notification-logo {
+  padding: 0rem;
+  height: 36rem;
+  width: 10rem;
+} */
+    .chat-notification-content {
+      margin-left: 1rem;
+      padding-top: 1rem;
+      /* text-align: center; */
+
+    }
+
+    .chat-notification-title {
+      color: #1a202c;
+      font-size: 1.25rem;
+      line-height: 1.25;
+    }
+
+    .chat-notification-message {
+      color: #718096;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .mail-info {
+      display: flex;
+      max-width: 100rem;
+      height: 100%;
+      width: 90%;
+      margin: 1rem auto;
+      margin-top: 0;
+      padding: 0.5rem;
+      border-radius: 1.5rem;
+      background-color: transparent;
+      box-shadow: 0 20px 25px 6px rgba(0, 0, 0, 0.1), 0 10px 10px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .mail-info-close {
+      display: block;
+      max-width: 48rem;
+      height: 100%;
+      width: 90%;
+      margin: 1rem auto;
+      margin-top: 0;
+      padding: 0.5rem;
+      border-radius: 1.5rem;
+      background-color: transparent;
+      text-align: center;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      font-size: 0.7em;
+      color: #e8e8e8;
+      }
+
+    .mail-info-close:hover {
+      background-color: #eee;
+      cursor: pointer;
+
+    }
+
+
+    .mail-small-info {
+      margin-left: 0.5rem;
+      color: grey;
+      font-size: 4vw;
+      font-family: sans-serif;
+    }
+/*
+    .mail-small-answer {
+      margin-left: 1rem;
+      margin-top: 1.5rem;
+      color: black;
+      font-size: 4vw;
+    } */
+
+    /* .close i{
+      position: relative;
+      width: 97%;
+      max-width: 48rem;
+      margin: 0rem auto;
+      margin-left: 1rem auto;
+      padding: 1.5rem;
+      border-radius: 1.2rem;
+      background-color: white;
+      outline: none;
+      text-align:center;
+      color:red;
+      font-size: 3rem;
+      background-color: #fff;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      z-index:100;
+    } */
+
+    .ml1 {
+      /* font-weight: 900; */
+      font-size: 3.5vw;
+    }
+
+    .ml1 .letter {
+      display: inline-block;
+      line-height: 1vw;
+    }
+
+    .ml1 .text-wrapper {
+      position: relative;
+      display: inline-block;
+      /* padding-top: 0.1rem; */
+      /* padding-right: 0.05rem; */
+      /* padding-bottom: 0.15rem; */
+    }
+
+.auto-message {
+  position: fixed;
+  display: table;
+  width: 43%;
+  max-width: 15rem;
+  height: 10%;
+  background-color: white;
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  border: none;
+  border-radius: 2.1rem;
+  margin: 0.5rem;
+  overflow: hidden;
+  padding-left: 0.9rem;
+
+}
+
+.auto-message p {
+  vertical-align: middle;
+  margin: 0.5rem auto;
+  font-size: 3.5vw;
+  font-family: sans-serif;
+  color: black;
+  padding-top: 1rem;
+  padding-left: 1rem;
+
+  text-align: center;
+  text-align: left;
+}
+
+    #modal-1 {
+        bottom: 21%;
+        left: 1.3333%;
+        z-index: 2;
+    }
+
+    #modal-2 {
+        bottom: 10%;
+        left: 1.3333%;
+        z-index: 2;
+    }
+
+    .close-chat p {
+      color: red;
+      font-size: 2vw;
+    }
+
+    .close-chat {
+      float: left;
+      width: 1rem;
+      height: 1rem;
+      max-width:12rem;
+      background-color: white;
+      font-size: 1vw;
+      margin-right: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 5rem;
+      padding: 0.5rem;
+      outline: none;
+      border: none;
+      -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      -moz-box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="chat-notification">
+    <!-- <div class="chat-notification-logo-wrapper">
+      <img class="chat-notification-logo" src="img/girl.svg" alt="ChitChat Logo">
+     </div> -->
+    <!-- <div class="chat-notification-content">
+        <h4 class="chat-notification-title">ChitChat</h4>
+        <p class="chat-notification-message">You have a new message!</p>
+      </div> -->
+
+
+    <h1>Future_Producer@mail.com</h1>
+
+    <button id="myCLICK" class= "my-click" onclick="myFunction()">
+      <p class= "ml1"><span class="text-wrapper">
+    <span class="letters">💌 Inbox (11)</span>
+  </span>
+</p>
+    </button>
+
+    <div id="myINBOX" class="wrapper">
+      <ul>
+
+        <button class="accordion"><h2>Prologue</h2></button>
+
+        <div class="panel">
+
+          <div class ="mail-info">
+            <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
+            <p class="mail-small-info"> future-director@mail.com<br /><cite>Dear, Future-Producers</cite><br />19 June 2020 at 19:07<br />future-producer@mail.com</p>
+          </div>
+          <p>
+            <br>At 15, I learnt the meaning of the word 'Frustration', as I felt helpless as a girl in a decidedly male-dominated system. Whenever I felt like an outcast I used to pull strength from the portrayals of a particular type of protagonist known as "magical girl".
+            I wanted to be a magical girl. I even cut my hair like they do. Rather than feeling down for my divergences and for all the things I couldn't have in life, I used the image of the magical girl on my television to feel like I was powerful too. I cried on the street on my way back home.
+            I cut my hair to look similar to a magical girl’s character. I badly wished to be like a protagonist in animation. I really wanted to become a magical girl who could eventually succeed and become the centre of her world. I was a complete outcast from my life. I wanted to become a class representative. I wanted to play soccer.
+            I wanted to do whatever I want to. However, in my life, everything that I wanted couldn’t be mine. Whenever I felt miserable, I sat in front of the television.
+            <br /><br />
+            On that 13-inch television, ‘magical girls’ were ordinary girls in Japanese fantasy and manga, who would transform and gain the power of magic.<sup>[1]</sup>
+            They would become brave, aggressively powerful, and beautiful. Every night, I prayed. “Please, let me become like her”.
+            If everything had gone as I wished back then, I would have become a magical girl and lived happily ever after. But nothing magical ever happened to me.
+            I wasn't a magical girl. And now that I am an adult, I realise that my saviours from television were not as perfect as I used to think.
+            I used to feel frustrated when I realised I’m too ugly in comparison to those magical girls. I used to feel ashamed for not behaving like their almost angelic selves.
+            I used to feel nothing but admiration towards my gods of girlhood, whereas now, I find it strange how different the girls in those animations are from ‘real’ girls. I’ve grown to feel suspicious of the image of their perfect bodies.
+            <br /><br />
+            Seemingly, the magical girl genre aims to teach girl-power to the younger generation. As Jeon Hee Jin writes in the journal <cite>Comparative study of magical girl characters of Korean and Japanese TV animations</cite>,
+            society even appears to actively cheer on that well-animated ‘guide’ and encourage us to be more like the ideal women shown on our screens.<sup>[2]</sup>
+            With all the decorative frills, heart shapes and rainbow colours that made their way beyond animations, the magical girl story is so well integrated (especially) into the young generation that it almost appears inherent.
+            But what if the society utilises the magical presences to instill in us “through a stylised repetition of acts” to support the misogynic system as Judith Butler put it in her 1988 essay “Performative Acts and Gender Constitution”<sup>[3]</sup>?
+            <br /><br />
+            I would like to paint you a picture. One that depicts the magical girl genre as if it were a film set for an animation. There is a big podium in the centre of the space, lit up by bright stage lights and surrounded by an array of thrown around production equipment.
+            Among them we find a bunch of intimidatingly large film cameras, focused on the one girl standing on the stage, closely observing her from all angles. She is in the very middle, taken in by these cameras with almost predatory intent. Behind the camera sits a man. He is the director.
+            He has been the director for quite a while, too. Far from the stage, there are spectators with opera glasses, silently appreciating the girl, the magical girl performing the director’s act. She is observed by 3 perspectives,
+            among which the view of the girl as the director and his camera capture her; the view of her through the eyes of the characters within the stage; and the view of her through the eyes of the male spectators;
+            as Susanne D. Walters also writes in her book <cite>Material Girls</cite> (referring to Laura Mulvey’s "Visual Pleasure in Narrative Cinema".) She is completely observed by the male gaze.<sup>[4]</sup>
+            <br /><br />
+            On stage, twelve years old and fresh from elementary school, the girl pretends to fight her monstrous enemies. In order to overcome them and be truly powerful, she transforms into a magical girl.
+            The cameras love her. They adore her. The director nods, a stoic smile around his lips. Once again, he tightens the camera and takes a shot targeting a quite specific selection of her body parts. The spectators silently watch.
+            <br /><br />
+            And just behind the curtain, eagerly waiting for their turn, are more girls. Trainees hoping to take the stage themselves soon. They grew up watching from behind that curtain, watching and admiring, preparing for the day they are good enough to take over.
+            It’s their dream to become a magical girl. And behind them are more girls, even younger ones. Every now and then, they know, a place will be made available. Not for all of them, not for most of them. For some, though. As long as the cameras are rolling on the magical girl, more magical girls will follow.
+            <br /><br />
+            I would dare to unpack their too-good-to-be-true story with a more critical eye and allow ourselves to find the errors inside. And further, can we dare to challenge deconstructing the certainly existing dominant gaze structure in the genre to correct these errors?
+            <br /><br /><br />
+            In this thesis, I attempt to take on the roles of both the young girl who has ‘the magical girl’ as her idol (the trainee, if you will) as well as that of the ‘future director’ who quits the magical girl training system, and rather suggests another type of strong female protagonist’s story that young girls could look up to in popular media instead.
+            “I take the camera and I say, hey, audience, I’m not just showing you this thing, I want you to really feel with me”.<sup>[5]</sup> And you take on the role of a future producer who can offer me the chance to realise what place the ‘magical girl’ genre still holds in the future of female idols in popular media.
+            <br /><br /><br />
+            The way in which I wish to illustrate the issues surrounding the magical girl genre is as follows: I would like to undertake the fairly peculiar action of sending a series of emails to you, the potential ‘magical girl’ animation spectators (and perhaps even advocates or directors) of tomorrow.
+            By sending the mails, I call for an interaction between the makers, the subjects and the viewers of this genre, in order to establish an understanding that works in all ways between them. I say hello to you. Hopefully, you reply, and if you do, I send out another email.
+            Hopefully, you reply again. This attempt to have a conversation builds a bridge between you and me, and as such between the directors, the spectators, the castmates and the magical girl herself. A direct connection, a powerful engagement, one with an eye on the horizon.
+            And I believe this (future) interaction, though on a larger scale, can bring a change to the story of magical girls. Open your mailbox. You will see a new mail is delivered from me.
+
+            <br><br><br>
+            All the best,<br>
+            Handi Kim<br><br><br>
+          </p>
+          <!-- <button class="close"><i>x</i></button> -->
+          <div class="mail-info-close">x</div>
+<!-- style = "color :  #ECF0F1; font-size : 1rem " -->
+
+        </div>
+
+
+        <button class="accordion"><h2>Knock. Knock.</h2></button>
+        <div class="panel">
+          <div class ="mail-info">
+            <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
+            <p class="mail-small-info">future-director@mail.com<br /><cite>Knock, Knock</cite><br />8 July 2020 at 14:32<br />future-producer@mail.com</p>
+            <!-- <p class="mail-small-answer"> future-director@mail.com<br />Knock,knock<br />8 July 2020 at 14:32<br />future-producer@mail.com</p> -->
+          </div>
+          <p>
+            <br><br>Dear future production supporters,<br><br>
+            Nice to meet you all. I’m very glad to be able to reach out to you, the future producers/funds/grants of this project. I’m Handi Kim who is a future director. There's a high possibility that I have never met you before in real life. Yes.
+            We probably don’t know each other. So it is fair if you were to think “Why me?” But still, I would like to share a very personal story with you. Maybe afterwards, it’ll be clear why.<br>
+            A piece of my life will be revealed to you, an audience unbeknownst to me, and I would like to ask you to appreciate this story in more universal terms, so that it will be applicable to any of you. By sending this mail, I hope and
+            believe a direct bridge between you and me will be built, particularly if we don’t know one another. I dare you to engage with and dedicate a bit of your time and energy to the coming story. And then, maybe, I hope that our interaction
+            allows us, the recipients (and maybe even appreciators) of the magical girl genre, to take action and steer the magical girl towards a brighter future.
+            <br>
+            <img src="img/1-1.svg" alt="Girl in a jacket" width="100%" height="100%">
+            This is the first time that I attempt to suggest my scenario to the public, let me introduce myself properly. As already mentioned above, my name is Handi Kim, the future director. I am from South Korea, currently living in the
+            Netherlands. To be honest, I wouldn’t say anything is particularly special about me, except one thing, and it’s all to do with ‘magical girls’. You may have heard of them. I used to be a trainee to become a magical girl for almost 20
+            years. You can guess how much I was dedicated to it. Ultimately however, I dropped out, or rather, was kicked out.<br>
+            For you, this all could sound a bit surreal. It may be quite bewildering as to why I, a person unbeknownst to you, sent this weirdly specific email out to people unbeknownst to me. Some of you may just simply move this mail to the bin.
+            Some of you may giggle and say, “A trainee for being a magical girl? What is this person talking about?”, and some of you might be very interested and already have some questions.
+            <br><br>
+            I would like to share some images with those of you who are still with me.
+            Look at these images. What do you see? What catches your eye? What do you think about the portrayal of the girls’ characters? How old do you think they are? In short, what impressions do they leave with you?
+            <br><br>
+            Magical girl is the sort of fantasy girl I wished I could have been like for 20 years and the ultimate goal for womanhood I was guided towards as a trainee. When you see these images of magical girls, do you feel maybe that there seems
+            to be something to be concerned about?<br>
+            By sending this mail, I would like to throw a metaphorical pebble at your windows and unpack the rather ugly truths behind a very beautiful story. A story which is told again and again through popular entertainment and therewith got
+            ingrained in the minds of our youngest generations.
+            I would like to tell a story created and sustained by advocates of a patriarchal society, and which has a very specific goal set in place for the women of the future. A goal which may not have their own best interests at heart, and which
+            holds no consideration for who those women really are, but a goal which is nonetheless idealised and presented as an inherent conviction. 
+            Hopefully, this mail makes you feel interested, and lets you decide to jump into more of the mails coming further. I really would love to share my concerns with you about these goals and the means put in place to have them be reached.
+            Please do tell me what you think.
+            I look forward to hearing from you all.
+            <br><br><br>
+            All the best,<br>
+            Handi Kim<br><br><br>
+          </p>
+          <div class="mail-info-close">x</div>
+
+        </div>
+        <button class="accordion"><h2>Girls Are Everywhere</h2></button>
+        <div class="panel">
+          <div class ="mail-info">
+            <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
+            <p class="mail-small-info">future-director@mail.com<br /><cite>Girls Are Everywhere</cite><br />12 August 2020 at 08:56<br />future-producer@mail.com</p>
+          </div>
+          <p>
+            <br><br>Hello all,<br><br>
+
+            Thank you for your kind attention. I’m pleased that you guys are interested in my suggested discussion on the implications and significations of the ‘magical girl’ idolisation. It was good to take all of your small questions into account before sharing a more detailed story to follow up my introductory email. In a way, I should have of course expected that you would ask about what exactly a ‘magical girl’ is. I will attempt to give you that answer.
+            <br><br>
+            The concept of magical girls originated in Shojo culture(literally “little female” culture) in Japan. Shojo originally referred to girls around the ages of 12 and 13. The subculture has been widely imitated across various genres and media, among which manga(comics), drama, animation, film, and songs. The stories of the magical girls primarily focus on girls’ adolescent struggles, friendship and love, and/or their growth in overcoming failure. They are meant to speak to teenage girls and help them realise they themselves could also be the centre of their worlds, and even be important in the world at large.
+            In the 60s and 70s, when Japanese animation was first shown in mainstream media, it mainly targeted boys. Most of the content in the media, as such, was focused on the ‘country of boys’, as Saito Minako writes in her book Koitenron.<br>
+            It was quite obvious, therefore, that the arrival of Shojo culture, with its focus, for the first time, on girls and their perception of the world, was a huge success in the media market. It directly became a hit among girls who wished to build a place in the world that was, finally, about them. A little space for girls only, in that big country of men. 
+            The very first magical girl anime appeared in 1996 with a show called Sally the Witch(魔法使いサリー). It follows Sally, princess of the magic world Astoria, and shows her episodic journey as she makes friends, uses magic, and tries to understand Earth. From that animation on, the concept of the magical girl was explored further and further until it became its own established genre. “In the worlds of manga and anime, shojo(girls) are everywhere” states Tufts University professor Susan Napier in “Anime from Akira to Princess Mononoke”.
+            The image of magic and power on screen then inevitably turned into an actual, real-life goal to be reached for the young girls who grew up watching shows like Sally the Witch. What these new special girl protagonists represented was an enrichment of female ambition and place in society. Girls could now not only dream of being little princesses waiting to be saved by some knight, but also to become powerful in and of themselves, by turning into a real-life magical girl. 
+            <br><br>
+            My daily life was filled with patriarchy and, as anything in society, was governed by heteronormativity (the idea that being heterosexual is the default mode of sexual orientation, asserted through the ever ruling gender binary). I was brought up to believe in common stupidities and gendered stereotypes, among which that “boys like trucks, girls like dolls; boys like blue, girls like pink; boys like sports, girls like makeup; boys are angry, girls are sad; boys are active heroes, girls are passive victims; boys are protagonists of stories, and girls are objects to be saved.” Like the start of every story, my motivation to become a magical girl was triggered by the (unspoken) rules of the society that I belonged to. 
+            <br><br>
+            I was born a girl, and my name is a girl’s name. Only girls have it. I was taught how to behave like a girl. I was dressed as a girl. The things I was expected to enjoy were girls’ things. I was made to do things in a girly manner. Growing up, there was no doubt in anyone’s mind that I was, in fact, a girl.
+            l wondered why I was treated so differently from my younger brother, my next-door male friend and my classmates. I wondered why my grandmother called me ‘one’ of 9 girls while my brother, who was the only boy, was just called by his name. I wondered why I had to quit Taekwondo and play the piano. They told me it was because it was better for a girl to play a piano, not to open her legs wide for kicking. I wondered why I needed to be scolded that I walked like a man and eventually I learnt how to walk in a pretty way. I wondered why I was refused to be a class representative, and needed to support the boy who was chosen instead.
+            And, now you can imagine how much I was impressed by the girls who save the world with magic power. The saviours who came to tear the expectations in my girly life apart, my magical girls. After seeing the overwhelming presence of the magical girls who dared to become the protagonists of their own story, I started dreaming of becoming such a protagonist of mine, right where I belonged.
+            <br><br>
+            Thank you for reading another one of my emails. I hope it helps you to be more interested in my project. Please feel free to contact me if you have any questions. 
+            Looking forward to receiving your comments.<br><br><br>
+
+            All the best,<br>
+            Handi Kim<br><br><br>
+
+          </p>
+          <div class="mail-info-close">x</div>
+        </div>
+
+        <button class="accordion"><h2>An Emerging Spectacle</h2></button>
+        <div class="panel">
+          <div class ="mail-info">
+            <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
+            <p class="mail-small-info">future-director@mail.com<br /><cite>An Emerging Spectacle</cite><br />7 September 2020 at 21:02<br />future-producer@mail.com</p>
+          </div>
+
+
+          <div class="mail-info-close">x</div>
+        </div>
+
+        <button class="accordion"><h2>Cast A Spell on Your Broomstick.</h2></button>
+        <div class="panel">
+          <div class ="mail-info">
+            <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
+            <p class="mail-small-info">future-director@mail.com<br /><cite>Cast A Spell on Your Broomstick.</cite><br />18 October 2020 at 03:26<br />future-producer@mail.com</p>
+          </div>
+
+
+          <div class="mail-info-close">x</div>
+        </div>
+
+        <button class="accordion"><h2>Your Role Model (to Be)</h2></button>
+        <div class="panel">
+          <div class ="mail-info">
+            <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
+            <p class="mail-small-info">future-director@mail.com<br /><cite>Your Role Model (to Be)</cite><br />1 November 2020 at 15:16<br />future-producer@mail.com</p>
+          </div>
+
+
+          <div class="mail-info-close">x</div>
+        </div>
+
+        <button class="accordion"><h2>Spectacular Spectated Spectacle</h2></button>
+        <div class="panel">
+          <div class ="mail-info">
+            <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
+            <p class="mail-small-info">future-director@mail.com<br /><cite>Spectacular Spectated Spectacle</cite><br />11 December 2020 at 23:34<br />future-producer@mail.com</p>
+          </div>
+          <div class="mail-info-close">x</div>
+        </div>
+
+        <button class="accordion"><h2>Girl, Girl, Girl, And Girl</h2></button>
+        <div class="panel">
+          <div class ="mail-info">
+            <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
+            <p class="mail-small-info">future-director@mail.com<br /><cite>Girl, Girl, Girl, And Girl</cite><br />26 December 2020 at 12:25<br />future-producer@mail.com</p>
+          </div>
+
+          <div class="mail-info-close">x</div>
+        </div>
+
+        <button class="accordion"><h2>The Flame</h2></button>
+        <div class="panel">
+          <div class ="mail-info">
+            <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
+            <p class="mail-small-info">future-director@mail.com<br /><cite>The Flame</cite><br />1 January 2021 at 20:21<br />future-producer@mail.com</p>
+          </div>
+
+
+          <div class="mail-info-close">x</div>
+        </div>
+
+        <button class="accordion"><h2>Rearrangement and Magic</h2></button>
+        <div class="panel">
+          <div class ="mail-info">
+            <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
+            <p class="mail-small-info">future-director@mail.com<br /><cite>Rearrangement and Magic</cite><br />27 January 2021 at 04:29<br />future-producer@mail.com</p>
+          </div>
+
+          <div class="mail-info-close">x</div>
+        </div>
+
+        <button class="accordion"><h2>Epilogue</h2></button>
+        <div class="panel">
+          <div class ="mail-info">
+            <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
+            <p class="mail-small-info">future-director@mail.com<br /><cite>Invitation</cite><br />1 Fabruary 2021 at 08:03<br />future-producer@mail.com</p>
+          </div>
+
+          <div class="mail-info-close">x</div>
+        </div>
+        <button id="myCLOSE" class="my-click" onclick="myFunction()"> Close </button>
+
+      </ul>
+    </div>
+
+    <!-- <p><b>Note:</b> Handi's Thesis.</p> -->
+  </div>
+
+  <!-- <div class="chat-notification">
+    <p><b>Note:</b> Handi's Thesis.</p>
+
+    <button class="accordion"> 11</button>
+    <div class="panel">
+      15
+    </div> -->
+
+  <div class="widget1">
+
+  </div>
+
+  <div class="widget2">
+
+  </div>
+
+  <div class="widget3">
+<p>
+<cite>Tie your hair up, Point your stick, Make some magic.</cite><br />
+  From Handi Kim (Future_Director@mail.com)
+
+</p>
+  </div>
+
+  <div class="widget4">
+  </div>
+
+  <div id="modal-1" class="auto-message">
+      <button id="modal-close-1" class="close-chat"></button>
+        <p>11 new message(s) <br />have arrived.</p>
+  </div>
+
+  <div id="modal-2" class="auto-message">
+      <button id="modal-close-2" class="close-chat"></button>
+        <p>Welcome! <br />Future-director.</p>
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+
+      $(".mail-info-close").click(function(e){
+          $(".panel").hide();
+      });
+
+
+    function myFunction() {
+      var x = document.getElementById("myINBOX");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+
+    $(document).ready(function(){
+      $(".my-click").click(function(){
+        $(".accordion").slideToggle(300);
+      });
+    });
+
+
+    anime.timeline({loop: true})
+  .add({
+    targets: '.ml1 .letter',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: (el, i) => 70 * (i+1)
+  }).add({
+    targets: '.ml1',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: '-=875',
+    delay: (el, i, l) => 80 * (l - i)
+  }).add({
+    targets: '.ml1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+  $(function() { // Shorthand for $(document).ready(function() {
+        $('#modal-1').hide().delay(3000).fadeIn(2200);
+  });
+
+$('#modal-close-1').click(function(){
+    $('#modal-1').fadeOut(1100);
+});
+
+$(function() { // Shorthand for $(document).ready(function() {
+      $('#modal-2').hide().delay(1000).fadeIn(2200);
+});
+
+$('#modal-close-2').click(function(){
+  $('#modal-2').fadeOut(1100);
+});
+
+
+
+
+  </script>
+
+</body>
+
+</html>

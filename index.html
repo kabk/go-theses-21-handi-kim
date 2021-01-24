@@ -482,6 +482,9 @@
 
 <body>
   <div class="chat-notification">
+    <audio id="audio" src="img/click.mp3" preload="auto"></audio>
+    <audio id="audio-close" src="img/click-close.mp3" preload="auto"></audio>
+
     <!-- <div class="chat-notification-logo-wrapper">
       <img class="chat-notification-logo" src="img/girl.svg" alt="ChitChat Logo">
      </div> -->
@@ -492,18 +495,19 @@
 
 
     <h1>Future_Producer@mail.com</h1>
+    <button id="myCLICK" class= "my-click" onclick="myFunction()" data-sound="audio">
 
-    <button id="myCLICK" class= "my-click" onclick="myFunction()">
       <p class= "ml1"><span class="text-wrapper">
     <span class="letters">💌 Inbox (11)</span>
   </span>
 </p>
+
     </button>
 
     <div id="myINBOX" class="wrapper">
       <ul>
 
-        <button class="accordion"><h2>Prologue</h2></button>
+        <button class="accordion" data-sound="audio"><h2>Prologue</h2></button>
         <div class="panel">
           <div class ="mail-info">
             <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
@@ -564,12 +568,12 @@
 
             <a id="cite-5" href="#ref-5">5.</a> TIFF Talks. “Jill Soloway on The Female Gaze | MASTER CLASS | TIFF 2016.” YouTube, uploaded by TIFF Talks, 11 Sept. 2016, www.youtube.com/watch?v=pnBvppooD9I&t=1359s&ab_channel=TIFFTalks.
           </p></div>
-          <div class="mail-info-close">x</div>
+          <div class="mail-info-close" data-sound="audio-close">x</div>
         </div>
 
 
 
-        <button class="accordion"><h2>Knock. Knock.</h2></button>
+        <button class="accordion" data-sound="audio"><h2>Knock. Knock.</h2></button>
         <div class="panel">
           <div class ="mail-info">
             <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
@@ -614,12 +618,12 @@
             Handi Kim<br>
           </p>
           <!-- <div class="reference">x</div> -->
-          <div class="mail-info-close">x</div>
+          <div class="mail-info-close" data-sound="audio-close">x</div>
         </div>
 
 
 
-        <button class="accordion"><h2>Girls Are Everywhere</h2></button>
+        <button class="accordion" data-sound="audio"><h2>Girls Are Everywhere</h2></button>
         <div class="panel">
           <div class ="mail-info">
             <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
@@ -669,13 +673,13 @@
 
             <a id="cite-2-10" href="#ref-2-10">10.</a> “The daughter of a legendary thief, who sewed winter coats out of stolen purses. Herself a thief, pickpocket, swindler. The saviour who came to tear my life apart. My Tamako. My Sookee.” - The Handmaiden(Agassi), Park, Chan-wook. CJ entertainment, 2016. Netflix<br /><br />
           </p>
-          <div class="mail-info-close">x</div>
+          <div class="mail-info-close" data-sound="audio-close">x</div>
         </div>
       </div>
 
 
 
-        <button class="accordion"><h2>An Emerging Spectacle</h2></button>
+        <button class="accordion" data-sound="audio"><h2>An Emerging Spectacle</h2></button>
         <div class="panel">
           <div class ="mail-info">
             <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
@@ -713,13 +717,13 @@
           <a id="cite-3-5" href="#ref-3-5">5.</a>Saito, Kumiko. “Magic,Shōjo, and Metamorphosis: Magical Girl Anime and the Challenges of Changing Gender Identities in Japanese Society.” The Journal of Asian Studies, vol. 73, no. 1, 2014, pp. 143–64. Crossref, doi:10.1017/s0021911813001708. p.146.
 
           </p></div>
-          <div class="mail-info-close">x</div>
+          <div class="mail-info-close" data-sound="audio-close">x</div>
         </div>
 
 
 
 
-        <button class="accordion"><h2>Cast A Spell on Your Broomstick.</h2></button>
+        <button class="accordion" data-sound="audio"><h2>Cast A Spell on Your Broomstick.</h2></button>
         <div class="panel">
           <div class ="mail-info">
             <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
@@ -766,13 +770,13 @@
 
           <a id="cite-4-6" href="#ref-4-6">2.</a>Saito, Kumiko. p.146.
           </p></div>
-          <div class="mail-info-close">x</div>
+          <div class="mail-info-close" data-sound="audio-close">x</div>
         </div>
 
 
 
 
-        <button class="accordion"><h2>Your Role Model (to Be)</h2></button>
+        <button class="accordion" data-sound="audio"><h2>Your Role Model (to Be)</h2></button>
         <div class="panel">
           <div class ="mail-info">
             <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
@@ -813,13 +817,13 @@
 
           <a id="cite-5-3" href="#ref-5-3">3.</a>Saito, Kumiko. p.158.<br /><br />
           </p></div>
-          <div class="mail-info-close">x</div>
+          <div class="mail-info-close" data-sound="audio-close">x</div>
         </div>
 
 
 
 
-        <button class="accordion"><h2>Spectacular Spectated Spectacle</h2></button>
+        <button class="accordion" data-sound="audio"><h2>Spectacular Spectated Spectacle</h2></button>
         <div class="panel">
           <div class ="mail-info">
             <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
@@ -865,13 +869,13 @@
 
           <a id="cite-6-4" href="#ref-6-4">4.</a>Saito, Kumiko. “Magic,Shōjo, and Metamorphosis: Magical Girl Anime and the Challenges of Changing Gender Identities in Japanese Society.” The Journal of Asian Studies, vol. 73, no. 1, 2014, pp. 143–64. Crossref, doi:10.1017/s0021911813001708. p. 152.<br /><br />
           </p></div>
-          <div class="mail-info-close">x</div>
+          <div class="mail-info-close" data-sound="audio-close">x</div>
         </div>
 
 
 
 
-        <button class="accordion"><h2>Girl, Girl, Girl, And Girl</h2></button>
+        <button class="accordion" data-sound="audio"><h2>Girl, Girl, Girl, And Girl</h2></button>
         <div class="panel">
           <div class ="mail-info">
             <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
@@ -915,14 +919,14 @@
 
           <a id="cite-7-6" href="#ref-7-6">6.</a>Napier, Susan. “Anime from Akira to Princess Mononoke: Experiencing Contemporary Japanese Animation.” Choice Reviews Online, vol. 39, no. 03, 2001, pp. 39–1364. Crossref, doi:10.5860/choice.39-1364. pp. 121-122.<br /><br />
           </p></div>
-          <div class="mail-info-close">x</div>
+          <div class="mail-info-close" data-sound="audio-close">x</div>
         </div>
 
 
 
 
 
-        <button class="accordion"><h2>The Flame</h2></button>
+        <button class="accordion" data-sound="audio"><h2>The Flame</h2></button>
         <div class="panel">
           <div class ="mail-info">
             <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
@@ -971,13 +975,13 @@
             <a id="cite-8-6" href="#ref-8-6">6.</a>“The BITCH Manifesto.” Feminist Articles by Joreen, Joreen, www.jofreeman.com/joreen/bitch.htm. Accessed 4 Dec. 2020.<br /><br />
           </p>
           </div>
-          <div class="mail-info-close">x</div>
+          <div class="mail-info-close" data-sound="audio-close">x</div>
         </div>
 
 
 
 
-        <button class="accordion"><h2>Rearrangement and Magic</h2></button>
+        <button class="accordion" data-sound="audio"><h2>Rearrangement and Magic</h2></button>
         <div class="panel">
           <div class ="mail-info">
             <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
@@ -1008,18 +1012,18 @@
             Handi Kim<br />
 
           </p>
-          <div class="reference"><p>
+          <div class="reference" data-sound="audio"><p>
           <a id="cite-9-1" href="#ref-9-1">1.</a>Walters, Suzanna Danuta. <cite>Material Girls: Making Sense of Feminist Cultural Theory</cite>. E-book, University of California Press, 1995. pp. 27-28.<br /><br />
 
           <a id="cite-9-2" href="#ref-9-2">2.</a>TIFF Talks. “Jill Soloway on The Female Gaze | MASTER CLASS | TIFF 2016.” YouTube, uploaded by TIFF Talks, 11 Sept. 2016, www.youtube.com/watch?v=pnBvppooD9I&t=1359s&ab_channel=TIFFTalks.
           </p></div>
-          <div class="mail-info-close">x</div>
+          <div class="mail-info-close" data-sound="audio-close">x</div>
         </div>
 
 
 
 
-        <button class="accordion"><h2>Epilogue</h2></button>
+        <button class="accordion" data-sound="audio"><h2>Epilogue</h2></button>
         <div class="panel">
           <div class ="mail-info">
             <p class="mail-small-info">From:<br />Re:<br />Date:<br />To:</p>
@@ -1047,13 +1051,11 @@
             All the best,<br />
             Handi Kim.<br />
           </p>
-          <div class="mail-info-close">x</div>
+          <div class="mail-info-close" data-sound="audio-close">x</div>
         </div>
 
 
-
-
-        <button id="myCLOSE" class="my-click" onclick="myFunction()"> Close </button>
+        <button id="myCLOSE" class="my-click" onclick="myFunction()" data-sound="audio"> Close </button>
 
       </ul>
     </div>
@@ -1088,18 +1090,18 @@
   <div class="widget4">
   </div>
 
-  <div id="modal-1" class="auto-message">
-      <button id="modal-close-1" class="close-chat"></button>
+  <div id="modal-1" class="auto-message" data-sound="audio-close">
+      <button id="modal-close-1" class="close-chat" data-sound="audio-close"></button>
         <p>11 new message(s) <br />have arrived.</p>
   </div>
 
-  <div id="modal-2" class="auto-message">
-      <button id="modal-close-2" class="close-chat"></button>
+  <div id="modal-2" class="auto-message" data-sound="audio-close">
+      <button id="modal-close-2" class="close-chat" data-sound="audio-close"></button>
         <p>Welcome! <br />Future-director.</p>
   </div>
 
-  <div id="modal-3" class="auto-message">
-      <button id="modal-close-3" class="close-chat"></button>
+  <div id="modal-3" class="auto-message" data-sound="audio-close">
+      <button id="modal-close-3" class="close-chat" data-sound="audio-close"></button>
         <p>Click the pop up message(s)<br />to close.</p>
   </div>
 
@@ -1195,6 +1197,86 @@ $(function() { // Shorthand for $(document).ready(function() {
 $('#modal-3').click(function(){
   $('#modal-3').fadeOut(1100);
 });
+
+var playSoundBtn = document.getElementsByClassName("my-click");
+
+var playSound = function() {
+    var attribute = this.getAttribute("data-sound");
+    var sounds = document.getElementsByTagName('audio');
+  	for(i=0; i<sounds.length; i++){
+        sounds[i].pause();
+        sounds[i].currentTime = 0;
+    }
+    document.getElementById(attribute).play();
+};
+
+for (var i = 0; i < playSoundBtn.length; i++) {
+    playSoundBtn[i].addEventListener('click', playSound, false);
+}
+
+var playSoundBtn = document.getElementsByClassName("accordion");
+
+var playSound = function() {
+    var attribute = this.getAttribute("data-sound");
+    var sounds = document.getElementsByTagName('audio');
+  	for(i=0; i<sounds.length; i++){
+        sounds[i].pause();
+        sounds[i].currentTime = 0;
+    }
+    document.getElementById(attribute).play();
+};
+
+for (var i = 0; i < playSoundBtn.length; i++) {
+    playSoundBtn[i].addEventListener('click', playSound, false);
+}
+
+var playSoundBtn = document.getElementsByClassName("mail-info-close");
+
+var playSound = function() {
+    var attribute = this.getAttribute("data-sound");
+    var sounds = document.getElementsByTagName('audio-close');
+  	for(i=0; i<sounds.length; i++){
+        sounds[i].pause();
+        sounds[i].currentTime = 0;
+    }
+    document.getElementById(attribute).play();
+};
+
+for (var i = 0; i < playSoundBtn.length; i++) {
+    playSoundBtn[i].addEventListener('click', playSound, false);
+}
+
+var playSoundBtn = document.getElementsByClassName("close-chat");
+
+var playSound = function() {
+    var attribute = this.getAttribute("data-sound");
+    var sounds = document.getElementsByTagName('audio-close');
+  	for(i=0; i<sounds.length; i++){
+        sounds[i].pause();
+        sounds[i].currentTime = 0;
+    }
+    document.getElementById(attribute).play();
+};
+
+for (var i = 0; i < playSoundBtn.length; i++) {
+    playSoundBtn[i].addEventListener('click', playSound, false);
+}
+
+var playSoundBtn = document.getElementsByClassName("auto-message");
+
+var playSound = function() {
+    var attribute = this.getAttribute("data-sound");
+    var sounds = document.getElementsByTagName('audio-close');
+  	for(i=0; i<sounds.length; i++){
+        sounds[i].pause();
+        sounds[i].currentTime = 0;
+    }
+    document.getElementById(attribute).play();
+};
+
+for (var i = 0; i < playSoundBtn.length; i++) {
+    playSoundBtn[i].addEventListener('click', playSound, false);
+}
 
 
 
